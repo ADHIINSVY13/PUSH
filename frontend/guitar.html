@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Guitar - LyricVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="guitar-styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-music me-2"></i>
+                LyricVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trending">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/guitar">Guitar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Guitar Header -->
+        <section id="guitar-header" class="mb-5">
+            <div class="glass-card text-center animate-fade-in">
+                <h1 class="display-4 mb-4">Interactive Guitar</h1>
+                <p class="lead">Play with our virtual guitar and explore musical notes as you browse lyrics.</p>
+            </div>
+        </section>
+
+        <!-- Interactive Guitar Section -->
+        <section id="guitar-interactive" class="mb-5">
+            <div class="glass-card animate-fade-in">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="guitar-container text-center">
+                            <!-- SVG Guitar (interactive) -->
+                            <div class="interactive-guitar mb-4" id="interactive-guitar">
+                                <!-- SVG will be loaded here -->
+                                <img src="guitar.svg" alt="Interactive Guitar" class="guitar-svg" id="guitar-svg">
+                            </div>
+                            
+                            <!-- Controls -->
+                            <div class="guitar-controls mb-4">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="control-panel glass-card p-3">
+                                            <div class="mb-3">
+                                                <label for="string-select" class="form-label">String</label>
+                                                <select class="form-select" id="string-select">
+                                                    <option value="0">String 1 (E) - Highest</option>
+                                                    <option value="1">String 2 (B)</option>
+                                                    <option value="2">String 3 (G)</option>
+                                                    <option value="3">String 4 (D)</option>
+                                                    <option value="4">String 5 (A)</option>
+                                                    <option value="5">String 6 (E) - Lowest</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="volume-control" class="form-label">Volume: <span id="volume-value">50%</span></label>
+                                                <input type="range" class="form-range" id="volume-control" min="0" max="100" value="50">
+                                            </div>
+                                            <div class="control-buttons">
+                                                <button class="btn btn-primary" id="play-chord">
+                                                    <i class="fas fa-play me-2"></i> Play Chord
+                                                </button>
+                                                <button class="btn btn-outline-primary" id="play-scale">
+                                                    <i class="fas fa-music me-2"></i> Play Scale
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Instructions -->
+                            <div class="guitar-instructions glass-card p-4">
+                                <h4 class="mb-3"><i class="fas fa-info-circle me-2"></i> How to Play</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Click on any fret to hear the note</li>
+                                            <li class="list-group-item">Use the string selector to change strings</li>
+                                            <li class="list-group-item">Adjust volume as needed</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Click "Play Chord" to hear a chord</li>
+                                            <li class="list-group-item">Click "Play Scale" to hear a scale</li>
+                                            <li class="list-group-item">Experiment with different combinations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Learn Section -->
+        <section id="guitar-learn" class="mb-5">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card h-100 animate-fade-in">
+                        <div class="card-body">
+                            <h3 class="section-header"><i class="fas fa-graduation-cap me-2"></i> Beginner Chords</h3>
+                            <p>Learning to play guitar starts with mastering a few basic chords. Here are some to get you started:</p>
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <div class="chord-card p-3 text-center">
+                                        <h5>C Major</h5>
+                                        <div class="chord-diagram">C</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="chord-card p-3 text-center">
+                                        <h5>G Major</h5>
+                                        <div class="chord-diagram">G</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="chord-card p-3 text-center">
+                                        <h5>D Major</h5>
+                                        <div class="chord-diagram">D</div>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="chord-card p-3 text-center">
+                                        <h5>E Minor</h5>
+                                        <div class="chord-diagram">Em</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card h-100 animate-fade-in">
+                        <div class="card-body">
+                            <h3 class="section-header"><i class="fas fa-music me-2"></i> Play Along with Lyrics</h3>
+                            <p>Try playing along with some of our most popular songs:</p>
+                            <div class="list-group">
+                                <a href="/search?q=Acoustic Dreams" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Acoustic Dreams
+                                    <span class="badge bg-primary rounded-pill">Em, C, G, D</span>
+                                </a>
+                                <a href="/search?q=Sunset Melody" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Sunset Melody
+                                    <span class="badge bg-primary rounded-pill">C, Am, F, G</span>
+                                </a>
+                                <a href="/search?q=Ocean Whispers" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Ocean Whispers
+                                    <span class="badge bg-primary rounded-pill">G, D, Em, C</span>
+                                </a>
+                                <a href="/search?q=Mountain Echo" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                    Mountain Echo
+                                    <span class="badge bg-primary rounded-pill">D, A, G, Em</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5 glass-card">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3"><i class="fas fa-music me-2"></i> LyricVerse</h5>
+                    <p class="mb-0">Find lyrics and discover similar songs with our smart recommendation engine.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-white text-decoration-none"><i class="fas fa-home me-2"></i> Home</a></li>
+                        <li class="mb-2"><a href="/search" class="text-white text-decoration-none"><i class="fas fa-search me-2"></i> Search</a></li>
+                        <li class="mb-2"><a href="/trending" class="text-white text-decoration-none"><i class="fas fa-chart-line me-2"></i> Trending</a></li>
+                        <li class="mb-2"><a href="/team" class="text-white text-decoration-none"><i class="fas fa-users me-2"></i> Team</a></li>
+                        <li class="mb-2"><a href="/contact" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i> Contact</a></li>
+                        <li><a href="/guitar" class="text-white text-decoration-none"><i class="fas fa-guitar me-2"></i> Guitar</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">© 2025 LyricVerse. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper (for navbar collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="guitar-script.js"></script>
+</body>
+</html>

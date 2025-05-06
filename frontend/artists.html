@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists - LyricVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-music me-2"></i>
+                LyricVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trending">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guitar">Guitar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Artists Header -->
+        <section id="artists-header" class="mb-5">
+            <div class="glass-card text-center animate-fade-in">
+                <h1 class="display-4 mb-4">Browse Artists</h1>
+                <p class="lead">Discover artists and their lyrics in our extensive collection.</p>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section id="artist-search" class="mb-5">
+            <div class="glass-card animate-fade-in">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div class="input-group mb-3">
+                            <input type="text" id="artist-search-input" class="form-control" placeholder="Search for an artist...">
+                            <button class="btn btn-primary" type="button" id="artist-search-button">
+                                <i class="fas fa-search me-1"></i> Search
+                            </button>
+                        </div>
+                        <div id="search-status" class="text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artists List by Letter -->
+        <section id="artist-alphabetical" class="mb-5">
+            <div class="glass-card animate-fade-in">
+                <h2 class="section-header mb-4">Browse Artists</h2>
+                
+                <!-- Alphabet Filter -->
+                <div class="alphabet-filter mb-4 text-center">
+                    <div class="btn-group flex-wrap" role="group" aria-label="Alphabet filter">
+                        <button type="button" class="btn btn-outline-primary active letter-filter" data-letter="all">All</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="A">A</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="B">B</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="C">C</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="D">D</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="E">E</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="F">F</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="G">G</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="H">H</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="I">I</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="J">J</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="K">K</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="L">L</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="M">M</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="N">N</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="O">O</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="P">P</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="Q">Q</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="R">R</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="S">S</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="T">T</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="U">U</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="V">V</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="W">W</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="X">X</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="Y">Y</button>
+                        <button type="button" class="btn btn-outline-primary letter-filter" data-letter="Z">Z</button>
+                    </div>
+                </div>
+                
+                <!-- Artists Grid -->
+                <div class="row" id="artists-grid">
+                    <!-- Sample Artists -->
+                    <div class="col-md-3 mb-4 artist-card" data-letter="T">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">The Melodics</h4>
+                                <p class="card-text">11 songs</p>
+                                <a href="/search?q=The Melodics" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="R">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Rhythm Collective</h4>
+                                <p class="card-text">9 songs</p>
+                                <a href="/search?q=Rhythm Collective" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="E">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Echo Chamber</h4>
+                                <p class="card-text">7 songs</p>
+                                <a href="/search?q=Echo Chamber" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="H">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Harmonic Resonance</h4>
+                                <p class="card-text">12 songs</p>
+                                <a href="/search?q=Harmonic Resonance" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="S">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Sonic Waves</h4>
+                                <p class="card-text">8 songs</p>
+                                <a href="/search?q=Sonic Waves" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="M">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Melodic Mirage</h4>
+                                <p class="card-text">6 songs</p>
+                                <a href="/search?q=Melodic Mirage" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="L">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Lyrical Landscape</h4>
+                                <p class="card-text">10 songs</p>
+                                <a href="/search?q=Lyrical Landscape" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4 artist-card" data-letter="V">
+                        <div class="glass-card h-100 animate-fade-in">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-circle fa-4x mb-3 text-primary"></i>
+                                <h4 class="card-title">Vocal Ventures</h4>
+                                <p class="card-text">5 songs</p>
+                                <a href="/search?q=Vocal Ventures" class="btn btn-outline-primary btn-sm">View Songs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5 glass-card">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3"><i class="fas fa-music me-2"></i> LyricVerse</h5>
+                    <p class="mb-0">Find lyrics and discover similar songs with our smart recommendation engine.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-white text-decoration-none"><i class="fas fa-home me-2"></i> Home</a></li>
+                        <li class="mb-2"><a href="/search" class="text-white text-decoration-none"><i class="fas fa-search me-2"></i> Search</a></li>
+                        <li class="mb-2"><a href="/trending" class="text-white text-decoration-none"><i class="fas fa-chart-line me-2"></i> Trending</a></li>
+                        <li class="mb-2"><a href="/team" class="text-white text-decoration-none"><i class="fas fa-users me-2"></i> Team</a></li>
+                        <li class="mb-2"><a href="/contact" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i> Contact</a></li>
+                        <li><a href="/guitar" class="text-white text-decoration-none"><i class="fas fa-guitar me-2"></i> Guitar</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">© 2025 LyricVerse. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper (for navbar collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="artists.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+/* === GLOBAL VARIABLES === */
+:root {
+    --primary-color: #b7188f;
+    --secondary-color: #121212;
+    --accent-color: #b80455;
+    --text-color: #f8f9fa;
+    --dark-bg: rgba(16, 18, 27, 0.4);
+    --card-bg: rgba(255, 255, 255, 0.2); /* Lighter background for cards */
+    --glass-bg: rgba(255, 255, 255, 0.15); /* Lighter glass effect */
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* === RESET + BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #121212, #362e79);
+    background-attachment: fixed;
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;  /* Added to support ::before absolute positioning */
+}
+
+/* This is the key fix for the background image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        url('../assets/music-bg.jpg') center/cover no-repeat, /* First the image */
+        linear-gradient(135deg, #121212, #362e79); /* Then the gradient */
+    z-index: -1;
+    opacity: 0.4;
+    animation: bgPulse 15s infinite alternate;
+}
+
+@keyframes bgPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 0.6;
+    }
+}
+
+/* === HEADER / NAV === */
+header, nav {
+    background: var(--dark-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--glass-shadow);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--text-color);
+    transition: color var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* === HERO SECTION === */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, var(--text-color), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.hero p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 0.7s;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05); /* More transparent (lower opacity) */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Slightly lighter border for more transparency */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); /* Lighter shadow for better transparency */
+    border-radius: 15px;
+    padding: 2rem;
+    color: #ffffff; /* White text for dark backgrounds */
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover, .glass:hover {
+    transform: translateY(-8px) scale(1.05); /* Slightly scale it up on hover */
+}
+
+
+.card:hover, .glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* === BUTTONS === */
+button, .btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+button:hover, .btn:hover {
+    background: #1658ca;
+}
+
+/* === SEARCH BAR === */
+.search-bar input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-color);
+    font-size: 1rem;
+    box-shadow: var(--glass-shadow);
+    transition: all var(--transition-speed);
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3);
+}
+
+/* === LINKS === */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--dark-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* === FADE IN ANIMATION === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* === KEY FEATURES BOXES === */
+.key-feature {
+    background: var(--glass-bg); /* Same lighter glass effect */
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--glass-shadow);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all var(--transition-speed);
+    color: var(--text-color);
+    opacity: 0.9; /* Adjusted opacity */
+}
+
+.key-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}

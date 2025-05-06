@@ -1,0 +1,161 @@
+/* Guitar Specific Styles */
+
+/* Guitar Container */
+.guitar-container {
+    padding: 1rem;
+}
+
+/* Interactive Guitar */
+.interactive-guitar {
+    margin: 0 auto;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.guitar-svg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.guitar-svg:hover {
+    filter: brightness(1.1);
+}
+
+/* Guitar Controls */
+.guitar-controls {
+    margin-top: 2rem;
+}
+
+.control-panel {
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--glass-shadow);
+}
+
+.control-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.guitar-instructions {
+    margin-top: 2rem;
+}
+
+/* Guitar Notes Visualization */
+.string-line {
+    stroke: #e0e0e0;
+    stroke-width: 2;
+    transition: all 0.2s ease;
+}
+
+.string-line:hover {
+    stroke: var(--bs-primary);
+    stroke-width: 3;
+}
+
+.fret {
+    stroke: #a0a0a0;
+    stroke-width: 2;
+    transition: all 0.2s ease;
+}
+
+.fret:hover {
+    stroke: var(--bs-primary);
+}
+
+.note-marker {
+    fill: var(--bs-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.note-marker.active {
+    opacity: 1;
+}
+
+/* Guitar Fret Highlighting */
+.fret-highlight {
+    fill: rgba(var(--bs-primary-rgb), 0.2);
+    stroke: var(--bs-primary);
+    stroke-width: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fret-highlight.active {
+    opacity: 1;
+}
+
+/* Chord Diagrams */
+.chord-card {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.chord-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glass-shadow);
+}
+
+.chord-diagram {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(var(--bs-primary-rgb), 0.1);
+}
+
+/* String Animation */
+@keyframes pluck {
+    0% {
+        stroke-width: 1.5;
+        transform: translateY(0);
+    }
+    25% {
+        stroke-width: 2.5;
+        transform: translateY(2px);
+    }
+    50% {
+        stroke-width: 2;
+        transform: translateY(-2px);
+    }
+    75% {
+        stroke-width: 1.8;
+        transform: translateY(1px);
+    }
+    100% {
+        stroke-width: 1.5;
+        transform: translateY(0);
+    }
+}
+
+.string-pluck {
+    animation: pluck 0.5s ease;
+}
+
+/* Volume Indicator */
+#volume-value {
+    font-weight: 600;
+    color: var(--bs-primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .control-buttons {
+        flex-direction: column;
+    }
+    
+    .interactive-guitar {
+        max-width: 95%;
+    }
+    
+    .guitar-instructions .row {
+        flex-direction: column;
+    }
+}

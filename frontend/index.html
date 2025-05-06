@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LyricVerse - Find and Discover Song Lyrics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-music me-2"></i>
+                LyricVerse
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/trending">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/artists">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/team">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guitar">Guitar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Hero Section -->
+        <section id="hero-section" class="mb-5">
+            <div class="hero-section glass-card animate-fade-in">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4 animate-fade-in delay-1">Find Your Favorite Lyrics</h1>
+                    <p class="lead mb-4 animate-fade-in delay-2">
+                        Discover lyrics from your favorite songs and explore music that matches your emotions.
+                    </p>
+                    <div class="search-bar mt-4 animate-fade-in delay-3">
+                        <form action="/search" method="GET">
+                            <div class="input-group mb-3">
+                                <input type="text" name="q" class="form-control" placeholder="Enter song title...">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <img src="guitar.svg" alt="Electric Guitar" class="hero-image animate-fade-in delay-4">
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features-section" class="mb-5">
+            <h2 class="section-header">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card glass-card h-100 animate-fade-in delay-1">
+                        <div class="card-body text-center">
+                            <i class="fas fa-search fa-3x mb-3 text-primary"></i>
+                            <h4 class="card-title">Smart Search</h4>
+                            <p class="card-text">Find lyrics quickly with our intelligent search algorithm that understands partial matches.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/search" class="btn btn-outline-primary">Try It Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card glass-card h-100 animate-fade-in delay-2">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x mb-3 text-primary"></i>
+                            <h4 class="card-title">AI Recommendations</h4>
+                            <p class="card-text">Discover similar songs using our advanced TF-IDF and cosine similarity algorithm.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/search" class="btn btn-outline-primary">Find Similar Songs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card glass-card h-100 animate-fade-in delay-3">
+                        <div class="card-body text-center">
+                            <i class="fas fa-guitar fa-3x mb-3 text-primary"></i>
+                            <h4 class="card-title">Interactive Guitar</h4>
+                            <p class="card-text">Play with our virtual guitar to explore musical notes while you browse lyrics.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="/guitar" class="btn btn-outline-primary">Play Guitar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Links Section -->
+        <section id="quick-links-section" class="mb-5">
+            <h2 class="section-header">Explore More</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card h-100 animate-fade-in delay-1">
+                        <div class="row g-0">
+                            <div class="col-md-4 d-flex align-items-center justify-content-center p-3">
+                                <i class="fas fa-chart-line fa-5x text-primary"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title">Trending Songs</h4>
+                                    <p class="card-text">Discover what songs are currently trending on our platform. See what others are searching for.</p>
+                                    <a href="/trending" class="btn btn-primary mt-2">View Trending</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="glass-card h-100 animate-fade-in delay-2">
+                        <div class="row g-0">
+                            <div class="col-md-4 d-flex align-items-center justify-content-center p-3">
+                                <i class="fas fa-users fa-5x text-primary"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h4 class="card-title">Meet Our Team</h4>
+                                    <p class="card-text">Learn about the people behind LyricVerse who are passionate about music and technology.</p>
+                                    <a href="/team" class="btn btn-primary mt-2">Our Team</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Call to Action -->
+        <section id="cta-section" class="mb-5">
+            <div class="glass-card text-center py-5 animate-fade-in">
+                <h2 class="mb-4">Ready to find your favorite lyrics?</h2>
+                <p class="lead mb-4">Our database contains thousands of songs with lyrics and smart recommendations.</p>
+                <a href="/search" class="btn btn-primary btn-lg">
+                    Start Searching Now
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5 glass-card">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3"><i class="fas fa-music me-2"></i> LyricVerse</h5>
+                    <p class="mb-0">Find lyrics and discover similar songs with our smart recommendation engine.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/" class="text-white text-decoration-none"><i class="fas fa-home me-2"></i> Home</a></li>
+                        <li class="mb-2"><a href="/search" class="text-white text-decoration-none"><i class="fas fa-search me-2"></i> Search</a></li>
+                        <li class="mb-2"><a href="/trending" class="text-white text-decoration-none"><i class="fas fa-chart-line me-2"></i> Trending</a></li>
+                        <li class="mb-2"><a href="/team" class="text-white text-decoration-none"><i class="fas fa-users me-2"></i> Team</a></li>
+                        <li class="mb-2"><a href="/contact" class="text-white text-decoration-none"><i class="fas fa-envelope me-2"></i> Contact</a></li>
+                        <li><a href="/guitar" class="text-white text-decoration-none"><i class="fas fa-guitar me-2"></i> Guitar</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3 mb-3">
+                        <a href="#" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mb-0">© 2025 LyricVerse. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper (for navbar collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="index.js"></script>
+</body>
+</html>
