@@ -1,34 +1,4 @@
-modules = ["python-3.11"]
-
-[nix]
-channel = "stable-24_05"
-packages = ["glibcLocales", "openssl", "postgresql"]
-
-[deployment]
-deploymentTarget = "autoscale"
-run = ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "gunicorn --bind 0.0.0.0:5000 --reuse-port --reload main:app"
-waitForPort = 5000
-
-[[ports]]
-localPort = 5000
-externalPort = 80
+Flask==3.1.0
+flask-cors==5.0.1
+scikit-learn==1.4.2
+gunicorn==21.2.0
